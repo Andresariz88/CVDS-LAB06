@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <style>
+          .guessNumber {
+            /*display: none;*/
+          }
+        </style>
+    </h:head>
+    <h:body>
+        <h1>Juego Adivinanza</h1>
+        <h:form id="guess_form">
+            <br/>
+            <p:outputLabel class="guessNumber" value="#{guessBean.getGuessNumber()}"> </p:outputLabel><br/><br/>
+            <p:inputText placeholder="Ingresa un número" required="true" value="#{guess}">
+
+            </p:inputText><br/><br/>
+            <p:outputLabel value="Número de intentos fallidos: #{guessBean.getAttempts()}"> </p:outputLabel><br/><br/>
+            <p:outputLabel value="¿Ya ganaste? #{guessBean.getStatus()}"> </p:outputLabel><br/><br/>
+            <p:outputLabel value="Premio actual: $#{guessBean.getRewardPrice()}"> </p:outputLabel><br/><br/>
+            <p:commandButton value="Send guess" update="guess_form" actionListener="#{guessBean.makeGuess(guess)}" > </p:commandButton><br/><br/>
+            <p:commandButton value="Restart" update="guess_form" actionListener="#{guessBean.restart()}"> </p:commandButton><br/><br/>
+            <h2>Intentos fallidos:</h2>
+            <p:outputLabel value="#{guessBean.getLastAttempts()}"> </p:outputLabel><br/><br/>
+        </h:form>
+    </h:body>
+</html>
