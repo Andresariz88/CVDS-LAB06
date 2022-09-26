@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('./background.jpg')
+}
+
+.form-register {
+    color: white;
+    width: 400px;
+    background: #24303c;
+    padding: 30px;
+    margin: auto;
+    margin-top: 15px;
+    border-radius: 10px;
+    font-family: 'calibri';
+    box-shadow: 10px 10px 35px #000;
+}
+
+.guessNumber {
+    display: none;
+}
+
+input {
+    width: 100%;
+    background: #24303c;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: 'calibri';
+}
+
+.commandButtons {
+    margin-right: 14px;
+}
+
+.gameTitle {
+    color: white;
+    padding: 30px;
+    margin: auto;
+    width: 400px;
+    margin-top: 100px;
+    font-family: 'calibri';
+    font-size: 47px;
+    text-shadow: 6px 6px 15px #000;
+}
