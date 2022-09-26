@@ -6,25 +6,22 @@
       xmlns:p="http://primefaces.org/ui">
 
     <h:head>
-        <style>
-          .guessNumber {
-            display: none;
-          }
-        </style>
+        <link rel="stylesheet" href="./style.css"/>
     </h:head>
+
     <h:body>
-        <h1>Juego Adivinanza</h1>
-        <h:form id="guess_form">
+        <h1 class="gameTitle">Juego Adivinanza</h1>
+        <h:form id="guess_form" class="form-register">
             <br/>
             <p:outputLabel class="guessNumber" value="#{guessBean.getGuessNumber()}"> </p:outputLabel><br/><br/>
-            <p:inputText placeholder="Ingresa un número" required="true" value="#{guess}">
+            <p:inputText placeholder="Ingresa un número"  value="#{guess}">
 
             </p:inputText><br/><br/>
             <p:outputLabel value="Número de intentos fallidos: #{guessBean.getAttempts()}"> </p:outputLabel><br/><br/>
             <p:outputLabel value="¿Ya ganaste? #{guessBean.getStatus()}"> </p:outputLabel><br/><br/>
             <p:outputLabel value="Premio actual: $#{guessBean.getRewardPrice()}"> </p:outputLabel><br/><br/>
-            <p:commandButton value="Send guess" update="guess_form" actionListener="#{guessBean.makeGuess(guess)}" > </p:commandButton><br/><br/>
-            <p:commandButton value="Restart" update="guess_form" actionListener="#{guessBean.restart()}"> </p:commandButton><br/><br/>
+            <p:commandButton class="commandButtons" value="Send guess" update="guess_form" actionListener="#{guessBean.makeGuess(guess)}" > </p:commandButton><br/><br/>
+            <p:commandButton class="commandButtons" value="Restart" update="guess_form" actionListener="#{guessBean.restart()}"> </p:commandButton><br/><br/>
             <h2>Intentos fallidos:</h2>
             <p:outputLabel value="#{guessBean.getLastAttempts()}"> </p:outputLabel><br/><br/>
         </h:form>
